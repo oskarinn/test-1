@@ -12,7 +12,26 @@ You will also see any lint errors in the console.
 
 ## Test de react con typeScript
 
-1 - Hacer una lista de cuidadores con lo que viene en esta [API](https://sheetsu.com/apis/v1.0su/581ad5595d0d) <br>
+1 - Hacer una lista de cuidadores con lo que viene en esta API<br>
+
+Hacer que lea el JSON de un archivo
+```javascript
+[
+  {
+    pais: "México",
+    name: "Chuck",
+    phone: "11576894838",
+    email: "chuck@email.com"
+  },
+  {
+    pais: "Argentina",
+    name: "Marta",
+    phone: "23234234234",
+    email: "marta@email.com"
+  }
+]
+```
+
 2 - Integrar redux para mantener la lista de los cuidadores.<br>
 3 - Hacer un formulario arriba de la lista para agregar cuidadores: pais, nombre, telefono, email y boton "agregar"<br>
 4 - Validar que los datos son correctos en cada input, si son incorrectos mostrar mensaje de error (inline)<br>
