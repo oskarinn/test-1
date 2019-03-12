@@ -7,6 +7,117 @@
     <title>Document</title>
     <style>
       /* Your CSS Here */
+      body {
+        padding: 0;
+        margin: 0; 
+        color: white;
+      }
+      
+      header {
+        background-color: red;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content {
+        display: block;}
+        @media only screen and (min-width: 600px) {
+          .content {
+            display: grid;
+            grid-template-columns: 12em auto;
+          }
+        }
+
+      aside {
+        background-color: purple;
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;}
+        @media only screen and (min-width: 600px){
+          aside {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+      main {
+        color: black;
+        background-color: #29b6f6;
+        padding: 2ex;
+        display: grid;
+        grid-gap: 2ex;
+        grid-template-columns: 12em auto 12em;
+        grid-template-rows: 6em 16em 6em;
+        grid-template-areas:
+            "item-1 item-1 item-4"
+            "item-2 item-3 item-4"
+            "item-2 item-5 item-5"
+        ;}
+        @media only screen and (max-width: 600px) {
+          main {
+            grid-template-columns: 6em auto 6em;
+            grid-template-rows: 3em 8em 3em;
+            grid-template-areas:
+                "item-2 item-1 item-1"
+                "item-2 item-3 item-4"
+                "item-5 item-5 item-4"
+            ;
+          }
+        }
+
+      .item {
+        background-color: #bbdefb;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .item-1 { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: item-1;
+      }
+
+      .item-2 { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: item-2;
+      }
+
+      .item-3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: item-3; 
+      }
+
+      .item-4 {
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        grid-area: item-4;
+      }
+
+      .item-5 { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: item-5;
+      }
+
+      footer {
+        text-align: center;
+        background-color: green;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
     </style>
 </head>
 <body>

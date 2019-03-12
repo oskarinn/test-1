@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Filtros</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Test Filtrar elementos repetidos</h1>
+  </header>
+
+  <main>
+      <h3>Input</h3>
+      <div>Array: [1, 3, 2, 3, 4, 5, 6, h, s, c, h, 3, 6]</div>
+      <br>
+      <h3>Resultado Filtrado: <div id="result"></div></h3>
+  </main>
+
+  <script>
+    /* 2 - Filtrar del array los elementos repetidos.
+    Ejemplo: Input: [1, 3, 2, 3, 4, 5, 6, h, s, c, h, 3, 6] output: [1, 3, 2, 4, 5 ,6, h, s, c]   */
+
+    $().ready(() => {
+      var ar1 = [1, 3, 2, 3, 4, 5, 6, 'h', 's', 'c', 'h', 3, 6];
+      var res = [];
+
+      // Filtramos elementos repetidos
+      ar1.forEach(item => {
+        if (!res.includes(item)) {res.push(item)}
+      }); 
+      
+      //imprimimos el resultado en la UI
+      var text = "<p>" + JSON.stringify(res)  + "</p>";
+      
+      console.log(text);
+      $("#result").html(text);
+
+    });
+  </script>
+</body>
+
+</html>

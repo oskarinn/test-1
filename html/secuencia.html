@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Secuencia</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Test Secuencia mas Larga</h1>
+  </header>
+  
+  <main>
+      <h3>Inputs</h3>
+      <div>Array 1: [1, 2, 5, 3, 7, 8, 9]</div>
+      <br>
+      <div>Array 2: [6, 8, 9, 3, 4, 5]</div>
+      <br>
+      <h3>Secuencia(s) mas larga(s): <div id="result"></div></h3>
+  </main>
+
+  <script>
+    /* 1 - Encontrar la secuencia más larga de números consecutivos en 2 arrays de entrada
+    Ejemplo: Input: [1, 2, 5, 3, 7, 8, 9] y [6, 8, 9, 3, 4, 5] Output: [3, 4, 5] o [7, 8, 9] */
+    
+    function getSecArray(array){
+      var num = NaN; 
+      var sec = [];
+      var secs = [];
+
+      while(array.length > 0){
+        var num2 = array.shift();
+        
+        if (num === num2-1){
+          sec.push(num2);
+        }
+        else{
+          sec = [];
+          sec.push(num2);
+          secs.push(sec);
+        }
+        num = num2;
+      }
+
+      return secs;
+    }
+
+    $().ready(() => {
+      var ar1 = [1, 2, 5, 3, 7, 8, 9];
+      var ar2 = [6, 8, 9, 3, 4, 5];
+      
+      var max = 0;
+      // obtenemos el array con las secuencias separadas y las unimos en otro array
+      res = getSecArray(ar1)
+        .concat(getSecArray(ar2));
+
+      // obtenemos el numero maximo de la sec mas larga
+      res.forEach((ar)=>{
+        max = (ar.length > max? ar.length: 0);
+      });
+      
+      // Obtenemos las secuencias mas largas
+      res = res.filter((ar)=> (ar.length === max));
+      //console.log(res);
+      
+      //imprimimos el resultado en la UI
+      var text = "";
+      res.map((ar)=>{
+        text += `<p>${JSON.stringify(ar)}</p>`;
+      });
+      console.log(text);
+      $("#result").html(text);
+
+    });
+  </script>
+</body>
+
+</html>
