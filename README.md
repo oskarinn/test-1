@@ -36,7 +36,7 @@ Hacer que lea el JSON de un archivo
 3 - Hacer un formulario arriba de la lista para agregar cuidadores: pais, nombre, telefono, email y boton "agregar"<br>
 4 - Validar que los datos son correctos en cada input, si son incorrectos mostrar mensaje de error (inline)<br>
 5 - Guardar en redux el cuidador nuevo.<br>
-6 - Crear un Pull request a este repositorio con la implementación del ejercicio.<br>
+6 - Copiar el repo y mandar el link de tu repo con la implementación del ejercicio.<br>
 Nota: la carpeta html es para el ejercicio siguiente.
 
 ## Desarrollas los siguientes problemas de la forma más eficiente posible:
